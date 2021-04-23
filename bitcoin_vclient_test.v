@@ -1,10 +1,10 @@
 module bitcoin_vclient
 
 const (
-        test_rpc_host    = 'http://10.20.90.105:18338'
-        test_client_name = 'vclient'
-        test_user        = 'someUser1'
-        test_pass        = 'jh85gbw409gh30'
+        test_rpc_host    = '10.11.22.33:8070'
+        test_client_name = 'testVClient'
+        test_user        = 'someUser'
+        test_pass        = 'someUserPass'
 )
 
 fn test_println() {
