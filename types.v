@@ -36,7 +36,7 @@ struct RpcBlockResponse {
         id     string [json: id]
 }
 
-struct RpcBlockVerboeResponse {
+struct RpcBlockVerboseResponse {
         result BlockVerbose [json: result]
         error  string       [json: error]
         id     string       [json: id]

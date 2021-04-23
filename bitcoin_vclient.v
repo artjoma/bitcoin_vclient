@@ -58,8 +58,8 @@ pub fn (client &BitcoinClient) get_block(blockHash string) ?RpcBlockResponse {
         return json.decode(RpcBlockResponse, response_json)
 }
 
-pub fn (client &BitcoinClient) get_block_verbose(blockHash string) ?RpcBlockVerboeResponse {
+pub fn (client &BitcoinClient) get_block_verbose(blockHash string) ?RpcBlockVerboseResponse {
         response_json := client.call('getblock', blockHash, 2) ?
-        return json.decode(RpcBlockVerboeResponse, response_json)
+        return json.decode(RpcBlockVerboseResponse, response_json)
 }
 
