@@ -1,0 +1,9 @@
+# Binaries for programs and plugins
+main
+bitcoin_vclient
+*.exe
+*.exe~
+*.so
+*.dylib
+*.dll
+workspace.code-workspace
