@@ -16,3 +16,4 @@ result: 00000000000000000009455e1ccb8dcfd5aa0a348984790e0c5303cdee72cde7
 * getbestblockhash
 * getblock (verbosity)
 * getdifficulty
+* gettxout

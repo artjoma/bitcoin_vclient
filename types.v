@@ -42,6 +42,20 @@ struct RpcBlockVerboseResponse {
         id     string       [json: id]
 }
 
+struct RpcGetTxOutResponse {
+        result TxOutResponse [json: result]
+        error  string       [json: error]
+        id     string       [json: id]
+}
+
+struct TxOutResponse {
+        bestblock string [json: bestblock]
+        confirmations u64 [json: confirmations]
+        value f64 [json: value]
+        script_pub_key ScriptPubKey [json: 'scriptPubKey']
+        coinbase bool [json: coinbase]
+}
+
 struct Block {
         hash              string   [json: hash]
         confirmations     u32      [json: confirmations]
@@ -134,3 +148,4 @@ struct ScriptPubKey {
         type_script string   [json: 'type']
         addresses   []string [json: addresses]
 }
+

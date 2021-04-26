@@ -1,10 +1,10 @@
 module bitcoin_vclient
 
 const (
-        test_rpc_host    = '10.11.22.33:8070'
-        test_client_name = 'testVClient'
-        test_user        = 'someUser'
-        test_pass        = 'someUserPass'
+        test_rpc_host    = 'http://11.21.91.106:18338'
+        test_client_name = 'bestClient'
+        test_user        = 'someUser1'
+        test_pass        = 'jh85gbw409gh30'
 )
 
 fn test_println() {
@@ -46,4 +46,15 @@ fn test_get_block_verbose() {
         assert resposne.result.tx[0].vin.len > 0
         assert resposne.result.tx[0].vout.len > 0
         // println('result $resposne')
+}
+
+fn test_tx_out() {
+        client := new_bitcoin_client(test_rpc_host, test_client_name, test_user, test_pass)
+        head_hash_resp := client.get_best_block_hash() or { panic(err) }
+        block := client.get_block(head_hash_resp.result) or { panic(err) }
+        resposne := client.get_tx_out(block.result.tx[0], 0) or { panic(err) }
+        
+        assert resposne.result.confirmations > 0
+        assert resposne.result.value > 0
+        //println('result $resposne')
 }

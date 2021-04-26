@@ -39,7 +39,7 @@ fn (client &BitcoinClient) call(methodName string, params ...json2.Any) ?string 
         if response.status_code != http.Status.ok.int() {
                 return error('Server return status code:$response.status_code')
         }
-        
+
         return response.text
 }
 
@@ -63,3 +63,7 @@ pub fn (client &BitcoinClient) get_block_verbose(blockHash string) ?RpcBlockVerb
         return json.decode(RpcBlockVerboseResponse, response_json)
 }
 
+pub fn (client &BitcoinClient) get_tx_out(txId string, n int) ?RpcGetTxOutResponse {
+        response_json := client.call('gettxout', txId, n) ?
+        return json.decode(RpcGetTxOutResponse, response_json)
+}

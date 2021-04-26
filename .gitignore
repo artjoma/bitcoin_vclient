@@ -7,3 +7,4 @@ bitcoin_vclient
 *.dylib
 *.dll
 workspace.code-workspace
+run_valgrind.sh
